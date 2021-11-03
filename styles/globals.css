@@ -82,6 +82,46 @@ a {
   height:100%;
   background:-webkit-linear-gradient(90deg,rgba(255,255,255,1.0) 10%, rgba(255,255,255,0.3));
 }
+.about-main-container{
+  position: relative;
+  width: 80vw;
+  height:fit-content;
+  margin-left:auto;
+  margin-right:auto;
+}
+.about-partition{
+  width:70vw;
+  min-height: 50px;
+  height:fit-content;
+  margin-top:50px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.brief-desc-section h1{
+  font-size:30pt;
+  text-align:center;
+}
+
+.brief-desc-section {
+  font-size:16pt;
+  text-align:center;
+  line-height:50px;
+}
+
+#about-page-image{
+  min-width:50px;
+  min-height:50px;
+  width:45vh;
+  height:45vh;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius: 50%;
+  background-image:url('../pages/assets/profile.png');
+  background-size:cover ;
+  background-position-x: -20px;
+  border:2px solid lightgray;
+}
 
 .project-banner-photo{
   position: absolute;
@@ -308,6 +348,10 @@ a {
 
 
 @media all and (max-width:950px){
+  .about-partition{
+    width:100vw;
+  }
+  
   #desc-main-text{
     margin-top:-100px;
   }
