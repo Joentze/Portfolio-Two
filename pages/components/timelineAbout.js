@@ -18,21 +18,6 @@ import {db} from '../firebase/firebase'
 import {useState, useEffect} from 'react'
 import Divider from '@material-ui/core/Divider';
 
-const timelineDataList = [{
-  date:"Jan 2014 - Dec 2017",
-  title:"Temasek Secondary School",
-  description:"testidwahoaw odhaiowhdoihawiohd ioahwiodhio awhdoihawiohd iawhodhaowhdioahw odhaowhdoha wiodhaowh dhawihdawoi dhawiohd"
-} ,
-{
-  date:"Feb 2018 - Dec 2019",
-  title:"Temasek Junior College",
-  description:"test"
-},
-{
-  date:"Apr 2020 - Apr 2022",
-  title:"Singapore Armed Forces",
-  description:"test"
-}];
 
 const MyTimeline = ()=> {
   const [timeline, setTimeline] = useState([])
