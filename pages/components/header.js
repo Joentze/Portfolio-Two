@@ -74,6 +74,7 @@ export default function MainHeader() {
       {['left'].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)} style={{marginTop:'10px',zIndex:"1000"}}><MenuIcon/></Button>
+          
           <SwipeableDrawer
             anchor={anchor}
             open={state[anchor]}

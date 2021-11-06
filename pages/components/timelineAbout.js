@@ -14,6 +14,9 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
+import {db} from '../firebase/firebase'
+import {useState, useEffect} from 'react'
+import Divider from '@material-ui/core/Divider';
 
 const timelineDataList = [{
   date:"Jan 2014 - Dec 2017",
@@ -32,10 +35,23 @@ const timelineDataList = [{
 }];
 
 const MyTimeline = ()=> {
+  const [timeline, setTimeline] = useState([])
+  useEffect(()=>{
+    const getTimelineElem = async ()=>{
+      let getAboutTimeline = (await db.collection("about-page").doc("iJdRHiSi4xGb9bd2SaOp").get()).data()
+      setTimeline(getAboutTimeline['timeline'])
+    }
+    getTimelineElem()
+  },[])
+
   return (
-    <>
+    <div id="about-timeline">
+    <h1>Timeline</h1>
+    <Divider/>
+    <br></br>
+    <br></br>
     <Timeline position="linear">{
-      timelineDataList.map((item)=>{
+      timeline.map((item)=>{
         return(
           <TimelineItem>
           <TimelineOppositeContent color="text.secondary">
@@ -46,6 +62,7 @@ const MyTimeline = ()=> {
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
+
               <TimelineCard
                 title={item.title}
                 description={item.description}
@@ -56,7 +73,7 @@ const MyTimeline = ()=> {
           })
 }
     </Timeline>
-    </>
+    </div>
   );
 }
 
