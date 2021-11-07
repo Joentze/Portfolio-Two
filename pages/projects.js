@@ -1,7 +1,7 @@
-import MainHeader from './components/header'
-import MediaCard from './components/ProjectMediaCard'
+import MainHeader from '../components/header'
+import MediaCard from '../components/ProjectMediaCard'
 import {useEffect, useState} from 'react'
-import {db} from './firebase/firebase'
+import {db} from '../firebase/firebase'
 import Divider from '@material-ui/core/Divider';
 const Projects =()=>{
     const [allCards, setCardData] = useState([])

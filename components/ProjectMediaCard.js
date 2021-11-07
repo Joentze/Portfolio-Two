@@ -1,14 +1,10 @@
-import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import {useRouter} from 'next/router'
-import GitHubIcon from '@material-ui/icons/GitHub';
 import Chip from '@material-ui/core/Chip';
-import {allPalette} from './palette'
+import {allPalette} from '../palette/palette'
 const MediaCard=({data})=> {
 const router = useRouter()
   return (
@@ -20,7 +16,7 @@ const router = useRouter()
       <CardMedia
         component="img"
         height="140"
-        image={data.bannerURI}
+        image={data["bannerURI"]}
         alt="photo"
       />
       <CardContent>

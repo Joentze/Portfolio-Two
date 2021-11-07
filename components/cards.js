@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Chip from '@material-ui/core/Chip';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import {allPalette} from './palette'
+import {allPalette} from '../palette/palette'
 import ReactMarkdown from 'react-markdown'
 import zIndex from '@material-ui/core/styles/zIndex';
 import {useRouter} from 'next/router'

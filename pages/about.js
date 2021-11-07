@@ -1,14 +1,14 @@
-import MainHeader from './components/header'
+import MainHeader from '../components/header'
 import Divider from '@material-ui/core/Divider';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-import MyTimeline from './components/timelineAbout'
-import {db} from './firebase/firebase'
+import MyTimeline from '../components/timelineAbout'
+import {db} from '../firebase/firebase'
 import {useState, useEffect} from 'react'
-import SkillBar from './components/SkillBar'
+import SkillBar from '../components/SkillBar'
 import Chip from '@material-ui/core/Chip';
-import {allPalette} from './components/palette'
+import {allPalette} from '../palette/palette'
 
 
 const softSkills = ['Creativity', 'Communication', 'Learning', 'Teamwork']
@@ -56,7 +56,7 @@ const About =()=>{
                             <div class="about-xp-sub-div">{hardSkills.map((item)=>{return (<SkillBar name={item} val={skills[item]} ifSecondary={"secondary"}/>)})}
                             </div>
                             <br></br>
-                            <p style={{color:"grey"}}><i>See write-up for projects <a href="./projects"><u>here</u></a></i></p>
+                            <p style={{color:"grey"}}><i>See write-up for projects <a href="/projects"><u>here</u></a></i></p>
                             </div>
                         <div class="about-xp-sub-box">
                             <h2>Soft Skills ☁️</h2>

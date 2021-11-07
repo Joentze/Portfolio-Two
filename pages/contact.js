@@ -1,4 +1,4 @@
-import MainHeader from './components/header'
+import MainHeader from '../components/header'
 import Divider from '@material-ui/core/Divider';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -6,7 +6,7 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import {useRouter} from 'next/router'
 import Chip from '@material-ui/core/Chip';
-import ContactForm from './components/Form'
+import ContactForm from '../components/Form'
 
 const Contact =({obj})=>{
     const router = useRouter()

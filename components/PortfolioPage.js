@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-import {allPalette} from './palette'
+import {allPalette} from '../palette/palette'
 import Chip from '@material-ui/core/Chip';
 import ContactMenu from './contactMenu';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -46,7 +46,7 @@ const PortfolioPage = ({obj}) =>{
                 
                 <div id="desc-desc-title">
                 <br></br>
-                Hi there! Welcome to my Portfolio page. Learn more about me <a style={{color:"#8ab7ff"}} href="./about"><u>here</u></a>
+                Hi there! Welcome to my Portfolio page. Learn more about me <a style={{color:"#8ab7ff"}} href="/about"><u>here</u></a>
                 </div>
                 </>
                 <ContactMenu/>

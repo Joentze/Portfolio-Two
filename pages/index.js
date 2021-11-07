@@ -1,10 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import MainHeader from './components/header'
-import FillContainer from './components/container'
+import MainHeader from '../components/header'
+import FillContainer from '../components/container'
 import {useState} from 'react'
-import PortfolioPage from './components/PortfolioPage'
+import PortfolioPage from '../components/PortfolioPage'
 import ReactMarkdown from 'react-markdown'
 
 export default function Home() {
