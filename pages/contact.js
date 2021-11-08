@@ -12,6 +12,7 @@ const Contact =({obj})=>{
     const router = useRouter()
     return (
     <>
+        <title>Joen | Contact</title>
         <MainHeader></MainHeader>
         <div class="contact-me-container">
             

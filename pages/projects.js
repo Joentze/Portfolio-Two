@@ -27,7 +27,8 @@ const Projects =()=>{
         
     }, [])
     return (
-    <>
+    <>  
+        <title>Joen | Projects</title>
         <MainHeader/>
         <div class="project-title-class">
             <h1>All Projects 👷🏼‍♂️</h1>

@@ -37,7 +37,6 @@ const ProjectPage = ({ id })=>{
     
     useEffect(()=>{
         const getData = async()=>{
-            console.log('weeeee')
             const getThisCard = await (await db.collection('all-projects').doc(id).get()).data()
             setCardData(getThisCard)
             setTags(getThisCard.tags)
@@ -54,6 +53,7 @@ const ProjectPage = ({ id })=>{
 
     return (
         <>
+        <title>Joen | {cardData.title}</title>
         <MainHeader/>
         <div class="project-banner-photo">
             <div class="project-fade-filter"></div>

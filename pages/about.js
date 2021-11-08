@@ -29,6 +29,7 @@ const About =()=>{
     },[])
     return (
         <>
+            <title>Joen | About</title>
             <MainHeader/>  
             <div class="about-main-container">
                 <div class="about-main-align">
