@@ -172,15 +172,10 @@ margin-right:auto;
   position: relative;
   width:80%;
   padding:40px;
-}
-
-.about-xp-sub-div{
+  color:gray;
 
 }
 
-.experience-section{
-
-}
 
 .brief-desc-section {
   font-size:16pt;
@@ -588,6 +583,8 @@ p{
 .about-xp-sub-box{
   position: relative;
   width:80vw;
+  font-size:10pt;
+  overflow-x:hidden
 }
 
 .about-main-container{

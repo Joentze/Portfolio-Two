@@ -16,16 +16,18 @@ const hardSkills = ['Coding', 'Writing', 'Designing', 'Googling']
 const mySkills = ['Python', 'Javascript', 'Web Design', 'Writing', 'React', 'Firebase', 'SQL', '3D', 'CAD', 'HTML', 'CSS']
 const About =()=>{
     const [desc, setDesc] = useState()
-    const [skills, setSkills] = useState({})
+    const [skills, setSkills] = useState({Proficient:[], Intermediate:[], Basic:[]})
     const [volunteer, setVolunteer] = useState()
     useEffect(()=>{
       const getDescElem = async ()=>{
         let getAboutTimeline = (await db.collection("about-page").doc("iJdRHiSi4xGb9bd2SaOp").get()).data()
         setDesc(getAboutTimeline['brief-description'])
-        setSkills(getAboutTimeline['skills'])
+        setSkills(getAboutTimeline['hard-skill-rate'])
         setVolunteer(getAboutTimeline['volunteer-xp'])
+        console.log(getAboutTimeline)
       }
       getDescElem()
+      
     },[])
     return (
         <>
@@ -47,16 +49,29 @@ const About =()=>{
                     <div class="about-xp-sub-box">
                             <h2>Hard Skills 🔨</h2>
                             <Divider/>
-                            <br></br>
-                            {mySkills.map((item)=>
+                           <br></br>
+                            <div class="about-xp-sub-div">
+                                Proficient:&nbsp; 
                                 {
-                            return (<Chip style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)
-                                    })
+                                    skills['Proficient'].map((item)=>{return (<Chip style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)})
                                 }
-                                <br></br>
-                            <div class="about-xp-sub-div">{hardSkills.map((item)=>{return (<SkillBar name={item} val={skills[item]} ifSecondary={"secondary"}/>)})}
                             </div>
                             <br></br>
+                            <div class="about-xp-sub-div">
+                                Intermediate:&nbsp; 
+                                {
+                                    skills['Intermediate'].map((item)=>{return (<Chip style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)})
+                                }
+                            </div>
+                            <br></br>
+                            <div class="about-xp-sub-div">
+                                Proficient:&nbsp; 
+                                {
+                                    skills['Basic'].map((item)=>{return (<Chip style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)})
+                                }
+                            </div>
+                            <br></br>
+
                             <p style={{color:"grey"}}><i>See write-up for projects <a href="/projects"><u>here</u></a></i></p>
                             </div>
                         <div class="about-xp-sub-box">
