@@ -44,6 +44,7 @@ const About =()=>{
                         <ReactMarkdown  plugins={remarkGfm} rehypePlugins={rehypeRaw}>{desc}</ReactMarkdown>
                     </div>
                     <br></br>
+                    
                     <div class="about-partition experience-section">
                     <div class="about-xp-sub-box">
                             <h2>Hard Skills 🔨</h2>
