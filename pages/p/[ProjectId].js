@@ -1,43 +1,59 @@
-import MainHeader from '../components/header'
+import MainHeader from '../../components/header'
 import {useEffect, useState} from 'react'
-import {db} from '../firebase/firebase'
+import {db} from '../../firebase/firebase'
 import Chip from '@material-ui/core/Chip';
 import CheckIcon from '@material-ui/icons/Check';
 import BuildIcon from '@material-ui/icons/Build';
 import ClearIcon from '@material-ui/icons/Clear';
 import Divider from '@material-ui/core/Divider';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'
-import rehypeRaw from 'rehype-raw'
-import {allPalette} from '../components/palette'
+import {allPalette} from '../../palette/palette'
 const projectStatusComponents ={
     1:<Chip icon={<CheckIcon style={{color:"#335c32"}}/>} label="Completed" variant="outlined" style={{background:"#8cff8a",color:"#335c32"}}/>,
     2:<Chip icon={<BuildIcon style={{color:"#705d3b"}}/>} label="On-going"  variant="outlined" style={{background:"#ffd48a",color:"#705d3b"}}/>,
     3:<Chip icon={<ClearIcon style={{color:"#703b3b"}}/>} label="Cancelled" variant="outlined" style={{background:"#ff8a8a",color:"#703b3b"}}/>
 }
 
+
 export const getServerSideProps = async ({ params }) => {
     const id = params.ProjectId
     return {props:{id:id}}
 }
+
+
+
 const ProjectPage = ({ id })=>{
     const [cardData, setCardData] = useState({})
     const [tags, setTags] = useState([])
+    const [desc, setDesc] = useState()
+    
+    const insertHtmlContent = (string)=>{
+        console.log('yeet')
+            if(string != undefined){
+                document.getElementById("insert-html-content").innerHTML = string
+            }
+
+    }
+    
     useEffect(()=>{
         const getData = async()=>{
             const getThisCard = await (await db.collection('all-projects').doc(id).get()).data()
             setCardData(getThisCard)
             setTags(getThisCard.tags)
-            console.log(cardData.bannerURI)
+            setDesc(getThisCard['full-description'])
+
+            insertHtmlContent(desc)
             return getThisCard
         }
-
+        
         getData()
+        
 
-    },[])
+    },[desc])
 
     return (
         <>
+        <title>Joen | {cardData.title}</title>
         <MainHeader/>
         <div class="project-banner-photo">
             <div class="project-fade-filter"></div>
@@ -59,7 +75,7 @@ const ProjectPage = ({ id })=>{
                 })}            
                 <br></br>
                 <br></br>
-                <ReactMarkdown  plugins={remarkGfm} rehypePlugins={rehypeRaw}>{cardData['full-description']}</ReactMarkdown>
+            <div id="insert-html-content"></div>
                 </div>
         </div>
         </>

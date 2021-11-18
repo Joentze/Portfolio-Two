@@ -1,14 +1,14 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import rehypeRaw from 'rehype-raw'
-import {allPalette} from './palette'
+import {allPalette} from '../palette/palette'
 import Chip from '@material-ui/core/Chip';
 import ContactMenu from './contactMenu';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 const mySkills = ['Python', 'Javascript', 'Web Design', 'Writing', 'React', 'Firebase', 'SQL', '3D', 'CAD', 'HTML', 'CSS']
-const descWriteUp = "Hi there! I am a creative & curious individual. I enjoy designing, coding, daydreaming & coffee."
+const descWriteUp = ""
 
 
 const PortfolioPage = ({obj}) =>{
@@ -38,7 +38,6 @@ const PortfolioPage = ({obj}) =>{
                 <div id="desc-main-text"><ReactMarkdown children = {"## Hello, I'm Joen"} plugins={remarkGfm} rehypePlugins={rehypeRaw}/></div>
                 <hr></hr>
                 <>
-                
                 {mySkills.map((item)=>
                     {
                         return (<Chip style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)
@@ -47,7 +46,7 @@ const PortfolioPage = ({obj}) =>{
                 
                 <div id="desc-desc-title">
                 <br></br>
-                {descWriteUp}
+                Hi there! Welcome to my Portfolio page. Learn more about me <a style={{color:"#8ab7ff"}} href="/about"><u>here</u></a>
                 </div>
                 </>
                 <ContactMenu/>

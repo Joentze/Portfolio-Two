@@ -1,14 +1,12 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import MainHeader from './components/header'
-import FillContainer from './components/container'
+import MainHeader from '../components/header'
+import FillContainer from '../components/container'
 import {useState} from 'react'
-import PortfolioPage from './components/PortfolioPage'
+import PortfolioPage from '../components/PortfolioPage'
 import ReactMarkdown from 'react-markdown'
 
 export default function Home() {
-  const [test, setTest] = useState()
   return (
     <div>
       <Head>
@@ -29,7 +27,7 @@ export default function Home() {
             <FillContainer idName="project-card-container"/>
             <div id="title-project-container">
               <div id="project-title-text-container">
-                <h1><ReactMarkdown>🛠 **My Projects.**</ReactMarkdown></h1>
+                <h1>🛠 My Projects.</h1>
                 <p style={{fontSize:"14pt", marginTop:"-50px", fontWeight:"300", marginLeft:"5px", lineHeight:"30px"}}>
                   <hr></hr>
                   Design & Technology are two sides of the same coin. On my projects, I strive to create something <mark style={{background:"#ffe3a6"}}>practical, but also beautiful.</mark>

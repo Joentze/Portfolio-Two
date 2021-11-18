@@ -5,7 +5,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import CallIcon from '@material-ui/icons/Call';
+import LinkIcon from '@material-ui/icons/Link';
 export default function ContactMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -20,7 +20,7 @@ export default function ContactMenu() {
   return (
     <div class="contact-menu">
       <IconButton aria-controls="simple-menu" size="large" aria-haspopup="true" onClick={handleClick}>
-        <CallIcon/>
+        <p>links</p><LinkIcon/>
       </IconButton>
       <Menu
         id="simple-menu"

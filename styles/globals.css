@@ -24,6 +24,15 @@ h1{
   color:rgb(60,60,60);
 }
 
+h3{
+  color:rgb(60,60,60);
+}
+
+h2{
+  color:rgb(60,60,60);
+}
+
+
 tr {
   border-top: 1px solid #c6cbd1;
   background: #fff;
@@ -41,6 +50,10 @@ table tr:nth-child(2n) {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.skill-chip-section h1{
+  margin-left:20px;
 }
 
 .icon-separate{
@@ -82,6 +95,116 @@ a {
   height:100%;
   background:-webkit-linear-gradient(90deg,rgba(255,255,255,1.0) 10%, rgba(255,255,255,0.3));
 }
+.about-main-container{
+  position: relative;
+  width: 80vw;
+  height:fit-content;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.project-title-class h1{
+  font-size:30pt;
+  margin-left:30px;
+}
+.project-title-class{
+position:relative;
+width:80vw;
+margin-left:auto;
+margin-right:auto;
+}
+
+.contact-me-container{
+  margin-top:50px;
+  position:relative;
+  margin-left:auto;
+  margin-right:auto;
+  width:80vw;
+  height:fit-content;
+  min-height:50px;
+
+}
+.contact-sub-link{
+  margin:20px;
+  width:fit-content;
+  min-width:20px;
+  min-height:20px;
+
+}
+
+.project-main-container{
+  display:flex;
+  flex-wrap:wrap;
+  position:relative;
+  width:80vw;
+  margin-left:auto;
+  margin-right:auto;
+  justify-content: center;
+}
+
+.contact-partition{
+  margin-top:10px;
+}
+
+.about-partition{
+  position: relative;
+  width:70vw;
+  min-height: 50px;
+  height:fit-content;
+  margin-top:50px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.skills-bar-style{
+  display: flex;
+  flex-direction: row;
+}
+.about-volunteer-section{
+
+  font-size:14pt;
+  line-height: 30px;
+}
+.brief-desc-section h1{
+  font-size:30pt;
+  text-align:center;
+}
+.about-xp-sub-box{
+  position: relative;
+  width:80%;
+  padding:40px;
+}
+
+.about-xp-sub-div{
+
+}
+
+.experience-section{
+
+}
+
+.brief-desc-section {
+  font-size:16pt;
+  text-align:center;
+  line-height:50px;
+}
+
+#about-timeline h1{
+  text-align:center;
+}
+
+#about-page-image{
+  min-width:50px;
+  min-height:50px;
+  width:40vh;
+  height:40vh;
+  margin-left:auto;
+  margin-right:auto;
+  border-radius: 50%;
+  background-image:url('../pages/assets/profile.png');
+  background-size:cover ;
+  background-position-x: -20px;
+  border:2px solid lightgray;
+}
 
 .project-banner-photo{
   position: absolute;
@@ -115,6 +238,7 @@ a {
 #project-title-text-container h1{
   font-size:30pt;
   font-size: 72px;
+  margin-bottom: 65px;
   color:rgb(40,40,40)
   /*
   background: -webkit-linear-gradient(35deg,#a8c0ff, #3f2b96);
@@ -308,6 +432,11 @@ a {
 
 
 @media all and (max-width:950px){
+  .about-partition{
+    width:100vw;
+    margin-left:15px;
+  }
+  
   #desc-main-text{
     margin-top:-100px;
   }
@@ -426,7 +555,7 @@ a {
 }
 
 #project-title-text-container h1{
-  font-size:35px;
+  font-size:25pt;
   padding-bottom:5px;
 }
 #project-title-text-container{
@@ -452,6 +581,24 @@ a {
   font-size:12pt;
   text-align: justify;
 }
+p{
+  font-size:12pt;
+  line-height: 30px;
+}
+.about-xp-sub-box{
+  position: relative;
+  width:80vw;
+}
+
+.about-main-container{
+  width:100vw;
+
+}
+.project-title-class h1{
+  text-align:center;
+
+}
+
 
 }
 
