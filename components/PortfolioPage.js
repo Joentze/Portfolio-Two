@@ -7,6 +7,7 @@ import ContactMenu from './contactMenu';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
+import Divider from '@material-ui/core/Divider';;
 const mySkills = ['Python', 'Javascript', 'Web Design', 'Writing', 'React', 'Firebase', 'SQL', '3D', 'CAD', 'HTML', 'CSS']
 const descWriteUp = ""
 
@@ -36,7 +37,8 @@ const PortfolioPage = ({obj}) =>{
         <div id="description-box-desc">
             <div id="desc-text-wrapper">
                 <div id="desc-main-text"><ReactMarkdown children = {"## Hello, I'm Joen"} plugins={remarkGfm} rehypePlugins={rehypeRaw}/></div>
-                <hr></hr>
+                <Divider/>
+                <br></br>
                 <>
                 {mySkills.map((item)=>
                     {

@@ -16,19 +16,22 @@ const hardSkills = ['Coding', 'Writing', 'Designing', 'Googling']
 const mySkills = ['Python', 'Javascript', 'Web Design', 'Writing', 'React', 'Firebase', 'SQL', '3D', 'CAD', 'HTML', 'CSS']
 const About =()=>{
     const [desc, setDesc] = useState()
-    const [skills, setSkills] = useState({})
+    const [skills, setSkills] = useState({Proficient:[], Intermediate:[], Basic:[]})
     const [volunteer, setVolunteer] = useState()
     useEffect(()=>{
       const getDescElem = async ()=>{
         let getAboutTimeline = (await db.collection("about-page").doc("iJdRHiSi4xGb9bd2SaOp").get()).data()
         setDesc(getAboutTimeline['brief-description'])
-        setSkills(getAboutTimeline['skills'])
+        setSkills(getAboutTimeline['hard-skill-rate'])
         setVolunteer(getAboutTimeline['volunteer-xp'])
+        console.log(getAboutTimeline)
       }
       getDescElem()
+      
     },[])
     return (
-        <>
+        <>  
+            <div class="svg-background"></div>
             <title>Joen | About</title>
             <MainHeader/>  
             <div class="about-main-container">
@@ -42,30 +45,40 @@ const About =()=>{
                         <ReactMarkdown  plugins={remarkGfm} rehypePlugins={rehypeRaw}>{desc}</ReactMarkdown>
                     </div>
                     <br></br>
-                  
+                    
                     <div class="about-partition experience-section">
                     <div class="about-xp-sub-box">
-                            <h2>Hard Skills 🔨</h2>
+                            <h2>Skills 🛠</h2>
                             <Divider/>
-                            <br></br>
-                            {mySkills.map((item)=>
+                           <br></br>
+                            <div class="about-xp-sub-div">
+                                Proficient:&nbsp; 
                                 {
-                            return (<Chip style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)
-                                    })
+                                    skills['Proficient'].map((item)=>{return (<Chip style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)})
                                 }
-                                <br></br>
-                            <div class="about-xp-sub-div">{hardSkills.map((item)=>{return (<SkillBar name={item} val={skills[item]} ifSecondary={"secondary"}/>)})}
                             </div>
+                            <br></br>
+                            <div class="about-xp-sub-div">
+                                Intermediate:&nbsp; 
+                                {
+                                    skills['Intermediate'].map((item)=>{return (<Chip style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)})
+                                }
+                            </div>
+                            <br></br>
+                            <div class="about-xp-sub-div">
+                                Proficient:&nbsp; 
+                                {
+                                    skills['Basic'].map((item)=>{return (<Chip style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)})
+                                }
+                            </div>
+                            <br></br>
+                            <Divider/>
+                            <p style={{color:"gray"}}>Soft Skills:&nbsp;{
+                                    softSkills.map((item)=>{return (<Chip variant="outlined" style={{marginTop:"5px",marginRight:"5px", marginBottom:"5px", color:allPalette[item.toLowerCase()][1],background:allPalette[item.toLowerCase()][0]}} size="medium" label={item} />)})
+                                }</p>
                             <br></br>
                             <p style={{color:"grey"}}><i>See write-up for projects <a href="/projects"><u>here</u></a></i></p>
                             </div>
-                        <div class="about-xp-sub-box">
-                            <h2>Soft Skills ☁️</h2>
-                            <Divider/>
-                            <div class="about-xp-sub-div">{softSkills.map((item)=>{return (<SkillBar name={item} val={skills[item]}/>)})}
-                            </div>
-                            </div>
-                        
                     </div>
                     <br></br>
                     <br></br>

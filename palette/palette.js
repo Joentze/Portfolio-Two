@@ -12,5 +12,9 @@ export const allPalette ={
     'writing':["#bfd6ff","#596a8f"],
     sql:["#ffa1c2","#966073"],
     arduino:["#85fbff","#487475"],
-    'next.js':["#82aaff","#496091"]
+    'next.js':["#82aaff","#496091"],
+    'creativity':["#cfe1ff","#435066"],
+    'communication':["#cfe1ff","#435066"],
+    'learning':["#cfe1ff","#435066"],
+    'teamwork':["#cfe1ff","#435066"]
 }

@@ -27,7 +27,7 @@ const Projects =()=>{
         
     }, [])
     return (
-    <>  
+    <>  <div class="svg-background"></div>
         <title>Joen | Projects</title>
         <MainHeader/>
         <div class="project-title-class">

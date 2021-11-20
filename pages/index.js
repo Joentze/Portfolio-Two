@@ -18,6 +18,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet"></link>
       </Head>
     <MainHeader/>
+      <div class="svg-background"></div>
       <div id='home-dashboard-flex'>
           <div id="home-title-text">
             <PortfolioPage/>
@@ -30,7 +31,7 @@ export default function Home() {
                 <h1>🛠 My Projects.</h1>
                 <p style={{fontSize:"14pt", marginTop:"-50px", fontWeight:"300", marginLeft:"5px", lineHeight:"30px"}}>
                   <hr></hr>
-                  Design & Technology are two sides of the same coin. On my projects, I strive to create something <mark style={{background:"#ffe3a6"}}>practical, but also beautiful.</mark>
+                  Design & Technology are two sides of the same coin. On my projects, I strive to create something practical, but also beautiful.
                 </p>
               </div>
             </div>

@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import {useRouter} from 'next/router'
 import Chip from '@material-ui/core/Chip';
 import {allPalette} from '../palette/palette'
+import CardActionArea from '@mui/material/CardActionArea';
 const MediaCard=({data})=> {
 const router = useRouter()
   return (
@@ -13,6 +14,7 @@ const router = useRouter()
     onClick={()=>{
         router.push(`p/${data['id']}`)
     }}>
+      <CardActionArea>
       <CardMedia
         component="img"
         height="140"
@@ -33,7 +35,7 @@ const router = useRouter()
         {data["briefDescription"]}
         </Typography>
       </CardContent>
-    
+      </CardActionArea>
     </Card>
   );
 }

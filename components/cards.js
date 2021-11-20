@@ -11,7 +11,7 @@ import {allPalette} from '../palette/palette'
 import ReactMarkdown from 'react-markdown'
 import zIndex from '@material-ui/core/styles/zIndex';
 import {useRouter} from 'next/router'
-
+import CardActionArea from '@mui/material/CardActionArea';
 
 const useStyles = makeStyles({
   root: {
@@ -45,7 +45,8 @@ const MainCard = ({cardData})=> {
       ()=>{
         router.push(`/p/${ProjectId}`)
       }
-    }>
+    }> 
+    <CardActionArea>
       <CardContent>
         <Typography variant="h5" component="h2">
             <b>{cardData.title}</b>
@@ -59,6 +60,7 @@ const MainCard = ({cardData})=> {
             <ReactMarkdown>{cardData.briefDescription}</ReactMarkdown>
         </Typography>
       </CardContent>
+      </CardActionArea>
     </Card>
   );
 }
